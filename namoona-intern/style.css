@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    border: border-box;
+    background-color:black;
+    font-family: sans-serif;
+    padding-left: 20px;
+    color:white;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar{
+    height: 104px;
+    color:white;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    align-items: center;
+    gap: 100px;
+}
+.nav-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+nav a{
+    text-decoration: none;
+    color:white;
+    padding: 20px;
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-top: 20px;
+}
+#home, #profile, #positions, #awards, #groupcompanies, #communityservices, #letsconnect{
+    padding: 20px; 
+    height: 100vh;
+    justify-content: center;
+        align-items: center;
+        display: flex;
+}
+.name{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    align-items: center;
+}
