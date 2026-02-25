@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanoj Thankappan</title>
+
+<style>
+
+/* GENERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+/* NAVBAR */
+header{
+    position:sticky;
+    top:0;
+    background:black;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
+
+.navbar a{
+    text-decoration:none;
+}
+
+.nav-name{
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+}
+.nav-name a{
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    margin:0 12px;
+}
+
+.connect-btn{
+    background:#F97316;
+    padding:8px 16px;
+    border-radius:8px;
+    color:white;
+}
+
+/* SECTIONS */
+section{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+/* HOME */
+.home-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.home-role{
+    color:#F97316;
+    font-weight:bold;
+}
+
+.home-title{
+    font-size:48px;
+    margin:20px 0;
+}
+
+.home-title span{
+    color:#F97316;
+}
+
+.home-desc{
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.btn-primary{
+    background:#F97316;
+    padding:10px 20px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+}
+
+.btn-outline{
+    border:2px solid #F97316;
+    padding:10px 20px;
+    border-radius:8px;
+    color:#F97316;
+    text-decoration:none;
+    margin-left:10px;
+}
+
+.profile-image img{
+    width:300px;
+    border-radius:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    padding:40px 60px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.footer-section h2{
+    margin-bottom:15px;
+}
+
+.footer-section a{
+    display:block;
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-bottom:8px;
+}
+
+footer p{
+    margin-top:15px;
+    color:#888;
+}
+/* PROFILE SECTION */
+
+.profile-container{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:60px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-tag{
+    color:#F97316;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.profile-text{
+    color:#cbd5e1;
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+.profile-card{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+}
+
+.profile-card h3{
+    margin-bottom:20px;
+    color:#F97316;
+}
+
+.profile-card ul{
+    list-style:none;
+}
+
+.profile-card li{
+    margin-bottom:12px;
+    color:#cbd5e1;
+}
+/* POSITIONS SECTION */
+
+.positions-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.positions-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.positions-list{
+    display:grid;
+    gap:30px;
+}
+
+.position-card{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+    transition:0.3s ease;
+}
+
+.position-card:hover{
+    border-color:#F97316;
+    transform:translateY(-5px);
+}
+
+.position-card h3{
+    color:#F97316;
+    margin-bottom:8px;
+}
+
+.position-year{
+    font-size:14px;
+    color:#888;
+    display:block;
+    margin-bottom:15px;
+}
+
+.position-card p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+/* AWARDS SECTION */
+
+.awards-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.awards-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.awards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+}
+
+.award-card{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+    transition:0.3s ease;
+}
+
+.award-card:hover{
+    border-color:#F97316;
+    transform:translateY(-5px);
+}
+
+.award-card h3{
+    color:#F97316;
+    margin-bottom:8px;
+}
+
+.award-card span{
+    font-size:14px;
+    color:#888;
+    display:block;
+    margin-bottom:15px;
+}
+
+.award-card p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+/* GROUP COMPANIES SECTION */
+
+.group-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.group-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.group-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+}
+
+.group-card{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+    transition:0.3s ease;
+}
+
+.group-card:hover{
+    border-color:#F97316;
+    transform:translateY(-5px);
+}
+
+.group-card h3{
+    color:#F97316;
+    margin-bottom:15px;
+}
+
+.group-card p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+/* COMMUNITY SERVICES SECTION */
+
+.community-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.community-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.community-subtext{
+    color:#cbd5e1;
+    margin-top:15px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.6;
+}
+
+.community-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+}
+
+.community-card{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+    transition:0.3s ease;
+}
+
+.community-card:hover{
+    border-color:#F97316;
+    transform:translateY(-5px);
+}
+
+.community-card h3{
+    color:#F97316;
+    margin-bottom:15px;
+}
+
+.community-card p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+/* CONTACT SECTION */
+
+.contact-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.contact-text{
+    color:#cbd5e1;
+    margin:20px 0;
+    line-height:1.6;
+}
+
+.contact-details p{
+    margin-bottom:10px;
+    color:#cbd5e1;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #333;
+    background:#111;
+    color:white;
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#F97316;
+}
+
+.contact-form button{
+    background:#F97316;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.contact-form button:hover{
+    background:#ea580c;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="nav-name">
+            <a href="#home">Sanoj Thankappan</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#positions">Positions</a>
+            <a href="#awards">Awards</a>
+            <a href="#groupcompanies">Group Companies</a>
+            <a href="#communityservices">Community Services</a>
+            <a href="#letsconnect" class="connect-btn">Let's Connect</a>
+        </div>
+    </div>
+</header>
+
+<!-- HOME -->
+<section id="home">
+    <div class="home-container">
+        <div>
+            <h4 class="home-role">CYBERSECURITY PROFESSIONAL</h4>
+            <h1 class="home-title">
+                Hi, I'm <span>Sanoj Thankappan</span>
+            </h1>
+            <p class="home-desc">
+                A seasoned cybersecurity leader with extensive experience in safeguarding digital ecosystems, 
+                implementing enterprise-grade security frameworks, and driving innovation in risk management 
+                and compliance strategies.
+            </p>
+
+            <a href="#profile" class="btn-primary">Explore Profile</a>
+            <a href="#letsconnect" class="btn-outline">Get In Touch</a>
+        </div>
+
+        <div class="profile-image">
+            <img src="https://img.freepik.com/premium-vector/vector-flat-man-avatar-no-face-with-hairstyle_574806-4758.jpg?semt=ais_user_personalization&w=740&q=80" alt="Profile">
+        </div>
+    </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+    <div class="profile-container">
+
+        <div class="profile-left">
+            <h4 class="section-tag">ABOUT</h4>
+            <h1 class="section-title">Profile</h1>
+
+            <p class="profile-text">
+                Sanoj Thankappan is a cybersecurity professional with extensive experience
+                in safeguarding enterprise systems, implementing secure infrastructure,
+                and managing digital risk frameworks. His expertise spans across threat
+                intelligence, compliance governance, and strategic security planning.
+            </p>
+
+            <p class="profile-text">
+                With a strong foundation in leadership and innovation, he has successfully
+                driven large-scale cybersecurity initiatives while mentoring teams and
+                strengthening organizational resilience.
+            </p>
+        </div>
+
+        <div class="profile-right">
+            <div class="profile-card">
+                <h3>Core Expertise</h3>
+                <ul>
+                    <li>Cybersecurity Strategy</li>
+                    <li>Risk & Compliance Management</li>
+                    <li>Enterprise Security Architecture</li>
+                    <li>Incident Response & Threat Analysis</li>
+                    <li>Data Protection & Governance</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- POSITIONS -->
+<section id="positions">
+    <div class="positions-container">
+
+        <div class="positions-header">
+            <h4 class="section-tag">LEADERSHIP JOURNEY</h4>
+            <h1 class="section-title">Positions</h1>
+        </div>
+
+        <div class="positions-list">
+
+            <div class="position-card">
+                <h3>Chief Information Security Officer</h3>
+                <span class="position-year">2022 – Present</span>
+                <p>
+                    Leading enterprise-wide cybersecurity strategy, risk governance, 
+                    and compliance frameworks while overseeing digital protection initiatives.
+                </p>
+            </div>
+
+            <div class="position-card">
+                <h3>Head of Cybersecurity Operations</h3>
+                <span class="position-year">2018 – 2022</span>
+                <p>
+                    Managed security operations center (SOC), incident response teams,
+                    and implemented advanced threat monitoring systems.
+                </p>
+            </div>
+
+            <div class="position-card">
+                <h3>Security Strategy Consultant</h3>
+                <span class="position-year">2015 – 2018</span>
+                <p>
+                    Advised organizations on security architecture design, regulatory compliance,
+                    and enterprise risk assessment.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+    <div class="awards-container">
+
+        <div class="awards-header">
+            <h4 class="section-tag">RECOGNITIONS</h4>
+            <h1 class="section-title">Awards</h1>
+        </div>
+
+        <div class="awards-grid">
+
+            <div class="award-card">
+                <h3>Excellence in Cybersecurity Leadership</h3>
+                <span>2023</span>
+                <p>
+                    Recognized for outstanding leadership in strengthening enterprise
+                    cybersecurity infrastructure and governance.
+                </p>
+            </div>
+
+            <div class="award-card">
+                <h3>Digital Innovation Award</h3>
+                <span>2021</span>
+                <p>
+                    Honored for implementing advanced threat intelligence systems
+                    and proactive digital defense mechanisms.
+                </p>
+            </div>
+
+            <div class="award-card">
+                <h3>Enterprise Risk Management Excellence</h3>
+                <span>2020</span>
+                <p>
+                    Awarded for exceptional contributions in risk mitigation
+                    and compliance framework development.
+                </p>
+            </div>
+
+            <div class="award-card">
+                <h3>Information Security Champion</h3>
+                <span>2019</span>
+                <p>
+                    Recognized for driving awareness initiatives and building
+                    a security-first organizational culture.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- GROUP COMPANIES -->
+<section id="groupcompanies">
+    <div class="group-container">
+
+        <div class="group-header">
+            <h4 class="section-tag">ORGANIZATIONS</h4>
+            <h1 class="section-title">Group Companies</h1>
+        </div>
+
+        <div class="group-grid">
+
+            <div class="group-card">
+                <h3>SecureTech Solutions Pvt Ltd</h3>
+                <p>
+                    A technology-driven company specializing in enterprise cybersecurity,
+                    infrastructure protection, and secure digital transformation.
+                </p>
+            </div>
+
+            <div class="group-card">
+                <h3>CyberGuard Innovations</h3>
+                <p>
+                    Focused on advanced threat intelligence, SOC operations,
+                    and real-time cyber defense systems.
+                </p>
+            </div>
+
+            <div class="group-card">
+                <h3>Digital Shield Enterprises</h3>
+                <p>
+                    Delivering compliance advisory, governance frameworks,
+                    and strategic digital risk management solutions.
+                </p>
+            </div>
+
+            <div class="group-card">
+                <h3>TechRisk Global Services</h3>
+                <p>
+                    Providing global cybersecurity consulting and enterprise
+                    resilience solutions for multinational organizations.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- COMMUNITY SERVICES -->
+<section id="communityservices">
+    <div class="community-container">
+
+        <div class="community-header">
+            <h4 class="section-tag">SOCIAL IMPACT</h4>
+            <h1 class="section-title">Community Services</h1>
+            <p class="community-subtext">
+                Dedicated to empowering communities through digital awareness,
+                mentorship, and responsible technology practices.
+            </p>
+        </div>
+
+        <div class="community-grid">
+
+            <div class="community-card">
+                <h3>Cybersecurity Awareness Programs</h3>
+                <p>
+                    Conducting workshops and awareness sessions to educate students,
+                    professionals, and organizations on digital safety and cyber hygiene.
+                </p>
+            </div>
+
+            <div class="community-card">
+                <h3>Digital Literacy Initiatives</h3>
+                <p>
+                    Supporting digital inclusion efforts by helping underserved communities
+                    gain access to safe and responsible technology usage.
+                </p>
+            </div>
+
+            <div class="community-card">
+                <h3>Mentorship & Career Guidance</h3>
+                <p>
+                    Mentoring aspiring cybersecurity professionals and guiding them
+                    towards building successful careers in information security.
+                </p>
+            </div>
+
+            <div class="community-card">
+                <h3>Technology for Social Good</h3>
+                <p>
+                    Collaborating with non-profit organizations to implement secure
+                    and sustainable technology solutions for social impact.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- LETS CONNECT -->
+<section id="letsconnect">
+    <div class="contact-container">
+
+        <div class="contact-left">
+            <h4 class="section-tag">GET IN TOUCH</h4>
+            <h1 class="section-title">Let’s Connect</h1>
+
+            <p class="contact-text">
+                For collaborations, advisory opportunities, speaking engagements,
+                or strategic consultations, feel free to reach out.
+            </p>
+
+            <div class="contact-details">
+                <p><strong>Email:</strong> sanoj@example.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Location:</strong> India</p>
+            </div>
+        </div>
+
+        <div class="contact-right">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>CONNECT</h2>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <p>© 2026 Sanoj Thankappan. All rights reserved.</p>
+        </div>
+
+        <div class="footer-section">
+            <h2>USEFUL LINKS</h2>
+            <a href="#home">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#positions">Positions</a>
+            <a href="#awards">Awards</a>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+// You can add JS here later if needed
+console.log("Website Loaded Successfully");
+</script>
+
+</body>
+</html>
