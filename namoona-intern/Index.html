@@ -20,8 +20,13 @@ html{
 }
 
 body{
-    background:black;
+    font-family: Arial, sans-serif;
+    background:#000;
     color:white;
+}
+.container{
+    max-width:1100px;
+    margin:auto;
 }
 
 /* NAVBAR */
@@ -72,7 +77,7 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:40px;
+    padding: 120px 20px;
 }
 
 /* HOME */
@@ -437,7 +442,25 @@ footer p{
 .contact-form button:hover{
     background:#ea580c;
 }
+.nav-links a.active{
+    color:#F97316;
+    font-weight:bold;
+}
+.position-card,
+.award-card,
+.group-card,
+.community-card{
+    opacity:1;                 /* visible by default */
+    transform:translateY(0);
+    transition:0.6s ease;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+}
 </style>
+
 </head>
 
 <body>
@@ -773,7 +796,64 @@ footer p{
 
 <script>
 // You can add JS here later if needed
-console.log("Website Loaded Successfully");
+console.log("Website Loaded Successfully");             
+   // ACTIVE NAV LINK ON SCROLL
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (scrollY >= sectionTop - 150) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+
+});
+
+// CONTACT FORM SUBMIT
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();  // prevent page reload
+    
+    alert("Message sent successfully!");
+    
+    form.reset(); // clear form
+});
+
+// SIMPLE SCROLL REVEAL
+
+const revealElements = document.querySelectorAll(".position-card, .award-card, .group-card, .community-card");
+
+const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < triggerBottom) {
+            el.classList.add("show");
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
 </script>
 
 </body>
